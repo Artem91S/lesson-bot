@@ -23,15 +23,22 @@ const app = express();
 const bot = new Telegraf('5301019579:AAGwSUWnD2-Yxa2o_no_glieXXp0mdFixD4');
 bot.on(message("text"), (ctx) => ctx.reply("Hello"));
 
- export default  appBot =  async(request, response)=> {
+const handleMessage = async (request, response) => {
   try {
-	await bot.handleUpdate(request.body);
+    // Ensure that this is a message being sent
+    if (request?.body) {
+      console.log(request.body);
+      await bot.handleUpdate(request.body);
+    }
   } catch (error) {
-    console.error("Error handling update", error.message);
+    // If there was an error sending our message then we
+    // can log it into the Vercel console
+    console.error("Error sending message");
+    console.log(error.toString());
   }
-
-  response.send("OK");
 };
+
+
 // // from openweathermap
 // const apiKey = "bf60c7cca9ba7d27aa20f720b3d78bec";
 // const city = 'Kyiv';
@@ -94,3 +101,4 @@ app.listen('8080', () => {
     console.log(`server started`);
 });
 // export default app;
+export default handleMessage;
