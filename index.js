@@ -23,7 +23,7 @@ const app = express();
 const bot = new Telegraf('5301019579:AAGwSUWnD2-Yxa2o_no_glieXXp0mdFixD4');
 bot.on(message("text"), (ctx) => ctx.reply("Hello"));
 
-async (request, response) => {
+ export default  appBot =  async(request, response)=> {
   try {
 	await bot.handleUpdate(request.body);
   } catch (error) {
@@ -93,4 +93,4 @@ app.get('/', (req,res)=> {
 app.listen('8080', () => {
     console.log(`server started`);
 });
-export default app;
+// export default app;
