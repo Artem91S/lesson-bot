@@ -1,8 +1,8 @@
 // import { Markup, Telegraf } from 'telegraf';
 // import { message } from 'telegraf/filters';
 // import fetch from 'node-fetch'
-const express = require('express')
-const app = express();
+// const express = require('express')
+// const app = express();
 
 
 // async function getWeatherByCity(city) {
@@ -78,10 +78,10 @@ const app = express();
 // });
 // // bot.hears('hi', (ctx) => ctx.reply('Hey there'));
 // bot.launch().then(()=> console.log('bot started!'));
-app.get('/', (req,res)=> {
-    res.send('tg bot is ready!');
-})
-app.listen('8080', () => {
-    console.log(`server started`);
-});
-export default app;
+// app.get('/', (req,res)=> {
+//     res.send('tg bot is ready!');
+// })
+// app.listen('8080', () => {
+//     console.log(`server started`);
+// });
+// export default app;
