@@ -3,6 +3,8 @@ import { message } from 'telegraf/filters';
 const bot = new Telegraf('5301019579:AAGwSUWnD2-Yxa2o_no_glieXXp0mdFixD4');
 bot.on(message("text"), (ctx) => ctx.reply("Hello"));
 
+bot.start((ctx) => ctx.reply('Welcome'));
+bot.help((ctx) => ctx.reply('Send me a sticker'));
 const handleMessage = async (request, response) => {
   try {
     // Ensure that this is a message being sent
