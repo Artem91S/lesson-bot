@@ -2,9 +2,9 @@
   "name": "lesson_bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "vercel dev",
+    "vercel-build": "echo run"
   },
   "keywords": [],
   "author": "",
