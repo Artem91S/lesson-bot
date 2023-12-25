@@ -1,11 +1,11 @@
-import { Markup, Telegraf } from 'telegraf';
-import { message } from 'telegraf/filters';
+const { Telegraf } = require("telegraf");
+
 const bot = new Telegraf('5301019579:AAGwSUWnD2-Yxa2o_no_glieXXp0mdFixD4');
-bot.on(message("text"), (ctx) => ctx.reply("Hello"));
+
 
 bot.start((ctx) => ctx.reply('Welcome'));
-bot.help((ctx) => ctx.reply('Send me a sticker'));
-const handleMessage = async (request, response) => {
+
+module.exports = async (request, response) => {
   try {
     // Ensure that this is a message being sent
     if (request?.body) {
@@ -18,6 +18,11 @@ const handleMessage = async (request, response) => {
     console.error("Error sending message");
     console.log(error.toString());
   }
+
+  // Acknowledge the message with Telegram
+  // by sending a 200 HTTP status code
+  // The message here doesn't matter.
+  response.send("OK");
 };
 
 export default handleMessage;
